@@ -58,29 +58,6 @@ endif
 
 include $(BUILD_SHARED_LIBRARY)
 
-# ---------------------------------------------------------------------------------
-#             Make the apps-test (mm-aenc-omxamr-test)
-# ---------------------------------------------------------------------------------
-
-include $(CLEAR_VARS)
-
-mm-amr-enc-test-inc    := $(LOCAL_PATH)/inc
-mm-amr-enc-test-inc    += $(LOCAL_PATH)/test
-
-mm-amr-enc-test-inc    += $(TARGET_OUT_HEADERS)/mm-core/omxcore
-LOCAL_MODULE            := mm-aenc-omxamr-test
-LOCAL_MODULE_TAGS       := optional
-LOCAL_CFLAGS            := $(libOmxAmrEnc-def)
-LOCAL_CFLAGS            := -Wno-tautological-compare -Wno-unused-local-typedef
-LOCAL_C_INCLUDES        := $(mm-amr-enc-test-inc)
-LOCAL_PRELINK_MODULE    := false
-LOCAL_SHARED_LIBRARIES  := libmm-omxcore
-LOCAL_SHARED_LIBRARIES  += libOmxAmrEnc
-LOCAL_VENDOR_MODULE     := true
-LOCAL_SRC_FILES         := test/omx_amr_enc_test.c
-
-include $(BUILD_EXECUTABLE)
-
 endif
 
 # ---------------------------------------------------------------------------------

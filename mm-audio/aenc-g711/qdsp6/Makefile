@@ -39,7 +39,7 @@ BININSTALLDIR := $(DESTDIR)usr/bin
 # ---------------------------------------------------------------------------------
 #					BUILD
 # ---------------------------------------------------------------------------------
-all: libOmxG711Enc.so.$(LIBVER) mm-aenc-omxg711-test
+all: libOmxAacEnc.so.$(LIBVER)
 
 install:
 	echo "intalling aenc-g711 in $(DESTDIR)"
@@ -49,7 +49,7 @@ install:
 	install -m 555 libOmxG711Enc.so.$(LIBVER) $(LIBINSTALLDIR)
 	cd $(LIBINSTALLDIR) && ln -s libOmxG711Enc.so.$(LIBVER) libOmxG711Enc.so.$(LIBMAJOR)
 	cd $(LIBINSTALLDIR) && ln -s libOmxG711Enc.so.$(LIBMAJOR) libOmxG711Enc.so
-	install -m 555 mm-aenc-omxg711-test $(BININSTALLDIR)
+
 
 # ---------------------------------------------------------------------------------
 #				COMPILE LIBRARY

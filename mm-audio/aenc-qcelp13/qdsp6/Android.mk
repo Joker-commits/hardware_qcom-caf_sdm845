@@ -59,30 +59,6 @@ endif
 
 include $(BUILD_SHARED_LIBRARY)
 
-
-# ---------------------------------------------------------------------------------
-#             Make the apps-test (mm-aenc-omxqcelp13-test)
-# ---------------------------------------------------------------------------------
-
-include $(CLEAR_VARS)
-
-mm-qcelp13-enc-test-inc    := $(LOCAL_PATH)/inc
-mm-qcelp13-enc-test-inc    += $(LOCAL_PATH)/test
-
-mm-qcelp13-enc-test-inc    += $(TARGET_OUT_HEADERS)/mm-core/omxcore
-LOCAL_MODULE            := mm-aenc-omxqcelp13-test
-LOCAL_MODULE_TAGS       := optional
-LOCAL_CFLAGS            := $(libOmxQcelp13Enc-def)
-LOCAL_CFLAGS            := -Wno-unused-local-typedef -Wno-shorten-64-to-32
-LOCAL_C_INCLUDES        := $(mm-qcelp13-enc-test-inc)
-LOCAL_PRELINK_MODULE    := false
-LOCAL_SHARED_LIBRARIES  := libmm-omxcore
-LOCAL_SHARED_LIBRARIES  += libOmxQcelp13Enc
-LOCAL_VENDOR_MODULE     := true
-LOCAL_SRC_FILES         := test/omx_qcelp13_enc_test.c
-
-include $(BUILD_EXECUTABLE)
-
 endif
 
 # ---------------------------------------------------------------------------------

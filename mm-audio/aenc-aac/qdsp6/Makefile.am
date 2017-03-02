@@ -29,7 +29,4 @@ libOmxAacEnc_la_CPPFLAGS = $(AM_CPPFLAGS) -fPIC $(GLIB_CFLAGS) -include glib.h -
 libOmxAacEnc_la_LIBADD = -lmm-omxcore -lstdc++ -lpthread $(GLIB_LIBS) -ldl -llog
 libOmxAacEnc_la_LDFLAGS = -shared $(GLIB_LIBS) -avoid-version $(OMXAUDIO_LIBRARY_VERSION)
 
-bin_PROGRAMS = mm-aenc-omxaac-test
-mm_aenc_omxaac_test_SOURCES = ./test/omx_aac_enc_test.c
-mm_aenc_omxaac_test_CFLAGS = -include errno.h -include limits.h
-mm_aenc_omxaac_test_LDADD = -lmm-omxcore -ldl -lpthread -llog libOmxAacEnc.la
+
